@@ -4,16 +4,15 @@ function register(price, paid) {
   //cashdrawer options
   var remainingChange = paid - price;
   var cashdrawer = [100, 50, 20, 10, 5, 1];
-  var billsForChange = {
-
-  };
+  var billsForChange = {};
   cashdrawer.forEach((bill) => {
     //"bill" isn't defined before we put it in the forEach function
-    billsForChange [bill] = Math.floor(remainingChange/bill)
-    remainingChange = remainingChange%bill
+    billsForChange[bill] = Math.floor(remainingChange / bill);
+    //straight brackets are for looking for a property that is inside an object(a function).
+    remainingChange = remainingChange % bill;
   });
 
-  console.log(billsForChange)
+  console.log(billsForChange);
 }
 
 register(137, 200);
